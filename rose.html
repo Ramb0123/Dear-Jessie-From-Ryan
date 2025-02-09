@@ -3,50 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Animation</title>
+    <title>Romantic Rose</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #222;
+            background: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
         }
-        .rose {
-            position: relative;
-            width: 100px;
-            height: 150px;
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
-        .petal, .stem {
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
             position: absolute;
-            background: red;
-            border-radius: 50%;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
-        .petal {
-            width: 50px;
-            height: 50px;
-            animation: bloom 2s infinite alternate ease-in-out;
+        .text-overlay h1 {
+            font-size: 3rem;
+            margin: 0;
         }
-        .stem {
-            width: 10px;
-            height: 80px;
-            background: green;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        @keyframes bloom {
-            from { transform: scale(0.5); }
-            to { transform: scale(1); }
+        .text-overlay p {
+            font-size: 1.5rem;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="rose">
-        <div class="stem"></div>
-        <div class="petal" style="top: 10px; left: 10px;"></div>
-        <div class="petal" style="top: 10px; right: 10px;"></div>
-        <div class="petal" style="top: -5px; left: 25px;"></div>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Base.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="text-overlay">
+        <h1>"Hi Bob"</h1>
+        <p>Every petal whispers a story of love and passion.</p>
+        <p>You are bad in Tetris battle.</p>
+
     </div>
 </body>
 </html>
