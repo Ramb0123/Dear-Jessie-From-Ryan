@@ -17,7 +17,6 @@
             background: black;
             color: white;
             font-family: 'Times New Roman', sans-serif;
-        
         }
         .video-container {
             position: fixed;
@@ -35,23 +34,31 @@
         .text-overlay {
             position: absolute;
             z-index: 1;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.5); /* Increased transparency */
+            padding: 40px; /* Increased padding */
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid #d4af37;
+            max-width: 1000px; /* Increased width */
+            max-height: 400px; /* Increased height */
         }
         .text-overlay h1 {
             font-size: 3rem;
             margin: 0;
             text-align: left;
+            color: #b8860b; /* Darker gold color */
         }
         .text-overlay p {
             font-size: 1.5rem;
             margin-top: 20px;
+            color: black;
         }
         .ryan {
             text-align: right;
             margin-right: 20px;
-            font-style: Times New Roman;
+            font-style: italic;
+            font-weight: bold;
+            color: #d4af37;
         }
     </style>
 </head>
@@ -61,6 +68,7 @@
             <source src="Base.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+
     </div>
     <div class="text-overlay">
         <h1>Dear Jessie, </h1>
