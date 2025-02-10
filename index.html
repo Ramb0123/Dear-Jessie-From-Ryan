@@ -101,6 +101,19 @@
             font-style: italic;
             font-weight: bold;
             color: #d4af37;
+            animation: fadeIn 3s ease-in-out 5s forwards; /* Delay of 2s */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: slight movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         }
     </style>
 </head>
