@@ -41,7 +41,6 @@
             border: 3px solid #d4af37;
             max-width: 1000px; /* Increased width */
             max-height: 600px; /* Increased height */
-            transform: translateY(100px);
             opacity: 0; /* Start invisible */
     animation: fadeIn 2s ease-in-out 3s forwards; /* Delay of 2s */
 }
@@ -49,7 +48,7 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Optional: slight movement */
+        transform: translateY(-20px); /* Optional: slight movement */
     }
     to {
         opacity: 1;
