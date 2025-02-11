@@ -49,6 +49,24 @@
     opacity: 0;
     animation: fadeInButton 2s ease-in-out 3s forwards;
 }
+        
+        /* Hover Effect */
+.button:hover {
+    background: #d4006e;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 0, 127, 0.8);
+    animation: floating 1s infinite alternate ease-in-out;
+}
+
+/* Keyframe Animation */
+@keyframes floating {
+    0% {
+        transform: translateY(-5px) scale(1.05);
+    }
+    100% {
+        transform: translateY(-10px) scale(1.08);
+    }
+}
 
 @keyframes fadeInButton {
     from {
@@ -81,7 +99,7 @@
             opacity: 0;
             display: none;
             transition: opacity 1s ease-in-out;
-            text-align: center;
+            text-align: left;
         }
 
         .text-overlay h1 {
