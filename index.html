@@ -18,7 +18,6 @@
             font-family: 'Times New Roman', sans-serif;
             flex-direction: column;
         }
-
         .video-container {
             position: fixed;
             top: 0;
@@ -27,15 +26,14 @@
             height: 100%;
             z-index: -1;
         }
-
         video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Open Button */
-        .open-button {
+        /* Button Styles */
+        .button {
             background: #ff007f;
             color: white;
             font-size: 1.5rem;
@@ -46,41 +44,29 @@
             font-weight: bold;
             transition: 0.3s ease-in-out;
             box-shadow: 2px 2px 10px rgba(255, 0, 127, 0.5);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInButton 2s ease-in-out 4s forwards; /* Delayed appearance */
+            margin-top: 20px;
         }
 
-        .open-button:hover {
+        .button:hover {
             background: #d4006e;
             transform: scale(1.1);
-        }
-
-        @keyframes fadeInButton {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Hidden Text Box */
         .text-overlay {
             position: absolute;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
             padding: 40px;
             border-radius: 15px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-            border: 3px solid #ff007f;
+            border: 3px solid #ff007f; /* Rose-colored border */
             max-width: 1000px;
             max-height: 600px;
             opacity: 0;
             display: none;
             transition: opacity 1s ease-in-out;
+            text-align: left;
         }
 
         .text-overlay h1 {
@@ -94,7 +80,7 @@
             font-size: 1.2rem;
             margin-top: 20px;
             color: black;
-            text-align: left; /* Align all text to the left */
+            text-align: left; /* Align all text to left */
         }
 
         .ryan {
@@ -105,24 +91,10 @@
             color: #d4af37;
         }
 
-        /* Close Button */
-        .close-button {
-            background: #ff007f;
-            color: white;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s ease-in-out;
+        /* Center Close Button */
+        .close-container {
+            text-align: center;
             margin-top: 20px;
-            display: block;
-        }
-
-        .close-button:hover {
-            background: #d4006e;
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -135,7 +107,7 @@
     </div>
 
     <!-- Open Button -->
-    <button class="open-button" id="openButton" onclick="showBox()">Open Your Letter 💌</button>
+    <button class="button" onclick="showBox()">Open Your Letter 💌</button>
 
     <!-- Hidden Text Box -->
     <div class="text-overlay" id="textBox">
@@ -148,31 +120,32 @@
         <p>我很高兴认识你，也很享受和你交流。真心希望有一天我们能见面，一起去旅行，享受美好的时光。我期待可以和你一起创造特别的回忆，看看这段旅程会带我们走向何方！</p>
         <p>请把这当作我送给你的一份小小的情人节礼物。💝</p>
         <p class="ryan">Ryan</p>
-        <button class="close-button" onclick="closeBox()">Close Letter ❌</button>
+
+        <!-- Close Button in Center -->
+        <div class="close-container">
+            <button class="button" onclick="closeBox()">Close Letter</button>
+        </div>
     </div>
 
     <script>
         function showBox() {
             var textBox = document.getElementById("textBox");
-            var openButton = document.getElementById("openButton");
-            textBox.style.display = "block";
+            textBox.style.display = "block"; // Show the box
             setTimeout(() => {
-                textBox.style.opacity = "1";
+                textBox.style.opacity = "1"; // Fade in effect
             }, 100);
-            openButton.style.display = "none"; // Hide the open button
         }
 
         function closeBox() {
             var textBox = document.getElementById("textBox");
-            var openButton = document.getElementById("openButton");
-            textBox.style.opacity = "0";
+            textBox.style.opacity = "0"; // Fade out effect
             setTimeout(() => {
-                textBox.style.display = "none";
-                openButton.style.display = "block"; // Show the open button again
-            }, 1000); // Delay to match fade-out effect
+                textBox.style.display = "none"; // Hide after fade-out
+            }, 1000);
         }
     </script>
 </body>
 </html>
+
 
 
