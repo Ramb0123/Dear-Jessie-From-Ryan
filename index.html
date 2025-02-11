@@ -146,5 +146,33 @@
         <p>_________________________________________________________________________________________________________</p>
         <p>情人节快乐！！</p>
         <p>我很高兴认识你，也很享受和你交流。真心希望有一天我们能见面，一起去旅行，享受美好的时光。我期待可以和你一起创造特别的回忆，看看这段旅程会带我们走向何方！</p>
-        <p>请把这当作我送给你的一份
+        <p>请把这当作我送给你的一份小小的情人节礼物。💝</p>
+        <p class="ryan">Ryan</p>
+        <button class="close-button" onclick="closeBox()">Close Letter ❌</button>
+    </div>
+
+    <script>
+        function showBox() {
+            var textBox = document.getElementById("textBox");
+            var openButton = document.getElementById("openButton");
+            textBox.style.display = "block";
+            setTimeout(() => {
+                textBox.style.opacity = "1";
+            }, 100);
+            openButton.style.display = "none"; // Hide the open button
+        }
+
+        function closeBox() {
+            var textBox = document.getElementById("textBox");
+            var openButton = document.getElementById("openButton");
+            textBox.style.opacity = "0";
+            setTimeout(() => {
+                textBox.style.display = "none";
+                openButton.style.display = "block"; // Show the open button again
+            }, 1000); // Delay to match fade-out effect
+        }
+    </script>
+</body>
+</html>
+
 
