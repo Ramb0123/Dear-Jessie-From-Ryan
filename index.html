@@ -55,7 +55,7 @@
         .text-overlay {
             position: absolute;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent */
             padding: 40px;
             border-radius: 15px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
@@ -87,6 +87,28 @@
             font-weight: bold;
             color: #d4af37;
         }
+
+        /* Close Button */
+        .close-button {
+            background: #ff4d4d;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .close-button:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
@@ -102,6 +124,7 @@
 
     <!-- Hidden Text Box -->
     <div class="text-overlay" id="textBox">
+        <button class="close-button" onclick="closeBox()">❌ Close</button>
         <h1>Dear Jessie,</h1>
         <p style="margin-top: 40px;">Happy Valentine’s Day!!</p>
         <p>It’s been a pleasure getting to know you, and I truly enjoy our conversations. I really hope that we’ll have the chance to meet in person, travel to different places, and share great moments together. I am excited about the possibility of building something special and seeing where this journey takes us!</p>
@@ -120,6 +143,14 @@
             setTimeout(() => {
                 textBox.style.opacity = "1"; // Fade in effect
             }, 100);
+        }
+
+        function closeBox() {
+            var textBox = document.getElementById("textBox");
+            textBox.style.opacity = "0"; // Fade out effect
+            setTimeout(() => {
+                textBox.style.display = "none"; // Hide box completely after fade-out
+            }, 1000);
         }
     </script>
 </body>
